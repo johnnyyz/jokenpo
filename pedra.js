@@ -1,9 +1,9 @@
-const opcoesJogador = document.querySelectorAll('.player-options div > img');
-const opcoesOponente = document.querySelectorAll('.enemy-options div > img');
+const opcoesJogador = document.querySelectorAll('.opcoesJogador div > img');
+const opcoesOponente = document.querySelectorAll('.opcoesOponente div > img');
 var escolhaJogador = '';
 var escolhaOponente = '';
 
-resetOpacity = ()=>{
+resetarOpacidade = ()=>{
     for (var i = 0; i < opcoesJogador.length; i++){
         opcoesJogador[i].style.opacity = 0.3;
         opcoesOponente[i].style.opacity = 0.3;     
@@ -17,9 +17,8 @@ jogadaOponente = ()=>{
     resultado();
 }
 
-
 resultado = ()=>{
-    let mensagem = document.querySelector('.msg-resultado');
+    let mensagem = document.querySelector('.msgResultado');
     switch(escolhaJogador){
         case('pedra'):
             switch(escolhaOponente){
@@ -60,15 +59,9 @@ resultado = ()=>{
     }
 } 
 
-
-
-
-
-
-
 for (var i = 0; i < opcoesJogador.length; i++){
     opcoesJogador[i].addEventListener('click',(t)=>{
-        resetOpacity();
+        resetarOpacidade();
         t.target.style.opacity = 1;
         escolhaJogador = t.target.getAttribute('opcao');
         jogadaOponente();
@@ -76,21 +69,3 @@ for (var i = 0; i < opcoesJogador.length; i++){
     })
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// for (var i = 0; i < oponenteOpcao.length; i++){
-    //     if(i==rand){
-    //         oponenteOpcao[i].style.opacity = 1;
-
-    //     }
-    // }
